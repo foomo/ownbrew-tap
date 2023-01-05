@@ -1,0 +1,7 @@
+# General
+.*
+._*
+tmp/
+!.github
+!.gitignore
+!.editorconfig

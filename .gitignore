@@ -1,7 +1,7 @@
 # General
 .*
 ._*
-tmp/
+/tmp/
 !.github
 !.gitignore
 !.editorconfig

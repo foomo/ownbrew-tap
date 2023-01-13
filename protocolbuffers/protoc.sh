@@ -24,7 +24,7 @@ fi
 curl -fL "https://github.com/protocolbuffers/protobuf/releases/download/v${version}/protoc-${version}-${os_alias}-${arch_alias}.zip" -o "${TEMP_DIR}/protoc.zip"
 
 # extract
-unzip -p "${TEMP_DIR}/protoc.zip bin/protoc"  > "${BIN_DIR}/protoc-${version}-${os}-${arch}"
+unzip -p "${TEMP_DIR}/protoc.zip" bin/protoc > "${BIN_DIR}/protoc-${version}-${os}-${arch}"
 chmod a+x "${BIN_DIR}/protoc-${version}-${os}-${arch}"
 
 # cleanup

@@ -10,6 +10,12 @@ linux) os_alias="linux";;
 darwin) os_alias="macos";;
 esac
 
+# TODO remove once supported
+if [ "$arch" = "arm64" ]
+then
+	echo "WARN: using amd64 version"
+fi
+
 # download
 curl -fL "https://github.com/jondot/hygen/releases/download/v${version}/hygen.${os_alias}.v${version}.tar.gz" -o "${TEMP_DIR}/hygen.tar.gz"
 

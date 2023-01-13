@@ -15,8 +15,8 @@ curl -fL "https://github.com/jondot/hygen/releases/download/v${version}/hygen.${
 
 # extract
 tar -xzvf "${TEMP_DIR}/hygen.tar.gz" -C "${TEMP_DIR}" hygen
-mv "${TEMP_DIR}/hygen" "${BIN_DIR}/hygen-${version}-${os}"
-chmod a+x "${BIN_DIR}/hygen-${version}-${os}"
+mv "${TEMP_DIR}/hygen" "${BIN_DIR}/hygen-${version}-${os}-${arch}"
+chmod a+x "${BIN_DIR}/hygen-${version}-${os}-${arch}"
 
 # cleanup
 rm "${TEMP_DIR}/hygen.tar.gz"

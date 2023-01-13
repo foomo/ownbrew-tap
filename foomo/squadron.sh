@@ -15,7 +15,7 @@ echo "$(cat "${TEMP_DIR}/squadron.tar.gz.sha256" | grep "squadron_${version}_${o
 # extract
 tar -xzvf "${TEMP_DIR}/squadron.tar.gz" -C "${TEMP_DIR}" squadron
 mv "${TEMP_DIR}/squadron" "${BIN_DIR}/squadron-${version}-${os}-${arch}"
-chmod a+x "bin/squadron-${version}-${os}-${arch}"
+chmod a+x "${BIN_DIR}/squadron-${version}-${os}-${arch}"
 
 # cleanup
 rm "${TEMP_DIR}/squadron.tar.gz" "${TEMP_DIR}/squadron.tar.gz.sha256"

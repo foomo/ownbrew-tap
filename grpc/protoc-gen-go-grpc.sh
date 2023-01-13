@@ -18,8 +18,8 @@ curl -fL "https://github.com/grpc/grpc-go/releases/download/cmd%2Fprotoc-gen-go-
 
 # extract
 tar -xzvf "${TEMP_DIR}/protoc-gen-go-grpc.tar.gz" -C "${TEMP_DIR}" protoc-gen-go-grpc
-mv "${TEMP_DIR}/protoc-gen-go-grpc" "bin/protoc-gen-go-grpc-${version}-${os}-${arch}"
-chmod a+x "bin/protoc-gen-go-grpc-${version}-${os}-${arch}"
+mv "${TEMP_DIR}/protoc-gen-go-grpc" "${BIN_DIR}/protoc-gen-go-grpc-${version}-${os}-${arch}"
+chmod a+x "${BIN_DIR}/protoc-gen-go-grpc-${version}-${os}-${arch}"
 
 # cleanup
 rm "${TEMP_DIR}/protoc-gen-go-grpc.tar.gz"

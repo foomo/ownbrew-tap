@@ -35,8 +35,8 @@ curl -fL "https://fastdl.mongodb.org/${path}-${os_alias}-${arch_alias}-${version
 # extract
 mkdir "${TEMP_DIR}/mongo"
 tar -xzvf "${TEMP_DIR}/mongo.tgz" --strip-components=1 -C "${TEMP_DIR}/mongo"
-mv "${TEMP_DIR}/mongo/bin/mongo" "bin/mongo-${version}-${os}-${arch}"
-chmod a+x "bin/mongo-${version}-${os}-${arch}"
+mv "${TEMP_DIR}/mongo/bin/mongo" "${BIN_DIR}/mongo-${version}-${os}-${arch}"
+chmod a+x "${BIN_DIR}/mongo-${version}-${os}-${arch}"
 
 # cleanup
 rm "${TEMP_DIR}/mongo.tgz" && rm -rf "${TEMP_DIR}/mongo"

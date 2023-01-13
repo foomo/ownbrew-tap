@@ -18,8 +18,8 @@ curl -fL "https://github.com/protocolbuffers/protobuf-go/releases/download/v${ve
 
 # extract
 tar -xzvf "${TEMP_DIR}/protoc-gen-go.tar.gz" -C "${TEMP_DIR}" protoc-gen-go
-mv "${TEMP_DIR}/protoc-gen-go" "bin/protoc-gen-go-${version}-${os}-${arch}"
-chmod a+x "bin/protoc-gen-go-${version}-${os}-${arch}"
+mv "${TEMP_DIR}/protoc-gen-go" "${BIN_DIR}/protoc-gen-go-${version}-${os}-${arch}"
+chmod a+x "${BIN_DIR}/protoc-gen-go-${version}-${os}-${arch}"
 
 # cleanup
 rm "${TEMP_DIR}/protoc-gen-go.tar.gz"

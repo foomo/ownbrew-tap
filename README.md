@@ -42,7 +42,7 @@ ownbrew:
       tap: foomo/tap/derailed/k9s
       version: 0.24.15
     - name: kubectl
-      tap: foomo/tap/aws/kubectl
+      tap: foomo/tap/kubernetes/kubectl
       version: 1.21.2
     - name: kubectl-hns
       tap: foomo/tap/kubernetes-sigs/kubectl-hns

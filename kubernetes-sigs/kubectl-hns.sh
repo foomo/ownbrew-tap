@@ -13,7 +13,7 @@ then
 	echo "WARN: using amd64 version"
 	arch_alias="amd64"
 else
-	arch_alias="arm64"
+	arch_alias="${arch}"
 fi
 
 # download

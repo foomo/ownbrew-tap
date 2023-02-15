@@ -11,6 +11,8 @@ if [ "$arch" = "arm64" ]
 then
 	echo "WARN: using amd64 version"
 	arch_alias="amd64"
+else
+	arch_alias="${arch}"
 fi
 
 # download

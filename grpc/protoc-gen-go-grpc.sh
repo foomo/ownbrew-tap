@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# https://github.com/protocolbuffers/protobuf-go
+# https://github.com/grpc/grpc-go
 
 # vars
 os="${os:-${1}}"
@@ -19,10 +19,9 @@ fi
 curl -fL "https://github.com/grpc/grpc-go/releases/download/cmd%2Fprotoc-gen-go-grpc%2Fv${version}/protoc-gen-go-grpc.v${version}.${os}.${arch_alias}.tar.gz" -o "${TEMP_DIR}/protoc-gen-go-grpc.tar.gz"
 
 # extract
-tar -xzvf "${TEMP_DIR}/protoc-gen-go-grpc.tar.gz" -C "${TEMP_DIR}" protoc-gen-go-grpc
+tar -xzvf "${TEMP_DIR}/protoc-gen-go-grpc.tar.gz" -C "${TEMP_DIR}"
 mv "${TEMP_DIR}/protoc-gen-go-grpc" "${BIN_DIR}/protoc-gen-go-grpc-${version}-${os}-${arch}"
 chmod a+x "${BIN_DIR}/protoc-gen-go-grpc-${version}-${os}-${arch}"
 
 # cleanup
-rm "${TEMP_DIR}/protoc-gen-go-grpc.tar.gz"
-
+rm "${TEMP_DIR}/protoc-gen-go-grpc.tar.gz" "${TEMP_DIR}/LICENSE" "${TEMP_DIR}/README.md"

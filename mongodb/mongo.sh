@@ -14,7 +14,7 @@ case $os in
 linux)
 	path="linux/mongodb-shell"
 	os_alias="linux"
-	arch_alias="${arch_alias}-ubuntu2004"
+	arch_alias="${arch_alias}-ubuntu2204"
 	;;
 darwin)
 	path="osx/mongodb"

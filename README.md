@@ -59,6 +59,9 @@ ownbrew:
     - name: mongo
       tap: foomo/tap/mongodb/mongo
       version: 5.0.5
+    - name: mongotools
+      tap: foomo/tap/mongodb/mongotools
+      version: 100.7.0
     - name: protoc
       tap: foomo/tap/protocolbuffers/protoc
       version: 3.19.1

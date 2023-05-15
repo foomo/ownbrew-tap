@@ -59,7 +59,19 @@ ownbrew:
     - name: mongo
       tap: foomo/tap/mongodb/mongo
       version: 5.0.5
+    - name: mongosh
+      tap: foomo/tap/mongodb/mongosh
+      version: 1.8.0
     - name: mongotools
+      names:
+      - bsondump
+      - mongodump
+      - mongoexport
+      - mongofiles
+      - mongoimport
+      - mongorestore
+      - mongostat
+      - mongotop
       tap: foomo/tap/mongodb/mongotools
       version: 100.7.0
     - name: protoc

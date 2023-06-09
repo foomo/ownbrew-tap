@@ -23,7 +23,6 @@ amd64)
   ;;
 arm64) arch_alias="arm64";;
 esac
-exit
 
 # download
 echo "downloading... https://github.com/derailed/k9s/releases/download/v${version}/k9s_${os_alias}_${arch_alias}.tar.gz"

@@ -16,10 +16,13 @@ jobs:
       fail-fast: false
       matrix:
         os:
-        - name: ubuntu-latest
-          short: linux
-        - name: macos-latest
-          short: darwin
+          - name: ubuntu-latest
+            short: linux
+          - name: macos-latest
+            short: darwin
+        arch:
+          - amd64
+          - arm64
         tab:
           - { name: accurics/terrascan.sh, version: "1.18.1" }
           # - { name: aws/kubectl.sh, version: "" }
@@ -57,12 +60,9 @@ jobs:
     runs-on: ${{ matrix.os.name }}
     steps:
       - uses: actions/checkout@v3
-      - name: Setup
+      - name: Install
         run: |
           mkdir -p $BIN_DIR
           mkdir -p $TEMP_DIR
-      - name: Install AMD64
-        run: ./${{ matrix.tab.name }} ${{ matrix.os.short }} amd64 ${{ matrix.tab.version }}
-      - name: Install ARM64
-        run: ./${{ matrix.tab.name }} ${{ matrix.os.short }} arm64 ${{ matrix.tab.version }}
+          ./${{ matrix.tab.name }} ${{ matrix.os.short }} ${{ matrix.arch }} ${{ matrix.tab.version }}
 

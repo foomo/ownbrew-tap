@@ -39,8 +39,8 @@ jobs:
           - { name: helm/helm.sh, version: "3.12.0" }
           - { name: jondot/hygen.sh, version: "6.2.11" }
           - { name: k3d-io/k3d.sh, version: "5.5.1" }
-          - { name: kubernetes-sigs/kubectl-hns.sh, version: "" }
-          - { name: kubernetes/kubectl.sh, version: "" }
+          #- { name: kubernetes-sigs/kubectl-hns.sh, version: "" }
+          #- { name: kubernetes/kubectl.sh, version: "" }
           - { name: mfridman/tparse.sh, version: "0.12.2" }
           #- { name: mongodb/mongo.sh, version: "" }
           #- { name: mongodb/mongosh.sh, version: "" }

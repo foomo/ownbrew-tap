@@ -41,7 +41,7 @@ jobs:
           - { name: k3d-io/k3d.sh, version: "5.5.1" }
           #- { name: kubernetes-sigs/kubectl-hns.sh, version: "" }
           #- { name: kubernetes/kubectl.sh, version: "" }
-          - { name: mfridman/tparse.sh, version: "0.12.2" }
+          - { name: mfridman/tparse.sh, version: "0.11.1" }
           #- { name: mongodb/mongo.sh, version: "" }
           #- { name: mongodb/mongosh.sh, version: "" }
           #- { name: mongodb/mongotools.sh, version: "" }

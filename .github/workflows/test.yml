@@ -51,14 +51,17 @@ jobs:
           - { name: stern/stern.sh, version: "125.0" }
           - { name: terraform-linters/tflint.sh, version: "0.46.1" }
     runs-on: ${{ matrix.os.name }}
+    env:
+      BIN_DIR: tmp/bin
+      TEMP_DIR: tmp/tmp
     steps:
       - uses: actions/checkout@v3
-      - name: Install
-        env:
-          BIN_DIR: tmp/bin
-          TEMP_DIR: tmp/tmp
+      - name: Setup
         run: |
           mkdir -p $BIN_DIR
           mkdir -p $TEMP_DIR
-          ./${{ matrix.tab.name }} ${{ matrix.os.short }} amd64 ${{ matrix.tab.version }}
-          ./${{ matrix.tab.name }} ${{ matrix.os.short }} arm64 ${{ matrix.tab.version }}
+      - name: Install AMD64
+        run: ./${{ matrix.tab.name }} ${{ matrix.os.short }} amd64 ${{ matrix.tab.version }}
+      - name: Install ARM64
+        run: ./${{ matrix.tab.name }} ${{ matrix.os.short }} arm64 ${{ matrix.tab.version }}
+

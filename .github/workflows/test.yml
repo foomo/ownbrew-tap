@@ -55,7 +55,6 @@ jobs:
           - { name: stern/stern.sh, version: "125.0" }
           - { name: terraform-linters/tflint.sh, version: "0.46.1" }
     runs-on: ${{ matrix.os.name }}
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v3
       - name: Setup

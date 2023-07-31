@@ -20,7 +20,7 @@ curl -fL "https://github.com/mfridman/tparse/releases/download/v${version}/check
 echo "$(cat ${TEMP_DIR}/tparse.sha256 | grep "tparse_${os}_${arch_alias}" | awk '{print $1;}')  ${TEMP_DIR}/tparse" | shasum -a 256 --check --quiet
 
 # extract
-mv "${TEMP_DIR}/tparse" "${TEMP_DIR}/tparse-${version}-${os}-${arch}"
+mv "${TEMP_DIR}/tparse" "${BIN_DIR}/tparse-${version}-${os}-${arch}"
 chmod a+x "${BIN_DIR}/tparse-${version}-${os}-${arch}"
 
 # cleanup

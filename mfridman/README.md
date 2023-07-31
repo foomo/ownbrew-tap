@@ -7,5 +7,5 @@ ownbrew:
   packages:
     - name: tparse
       tap: foomo/tap/mfridman/tparse
-      version: 0.12.2
+      version: 0.11.1
 ```

@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Keep kubectl version in sync with the aws cluster version
-# @see https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
 # vars
 os="${os:-${1}}"

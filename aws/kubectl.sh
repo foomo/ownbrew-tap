@@ -2,6 +2,10 @@
 # Keep kubectl version in sync with the aws cluster version
 # @see https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
+set -e
+
+echo "DEPRECATED: use kubernetes/"
+
 # vars
 os="${os:-${1}}"
 arch="${arch:-${2}}"

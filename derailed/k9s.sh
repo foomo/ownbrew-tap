@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 source ../include/semver.sh
 
 # vars
@@ -25,7 +27,6 @@ arm64) arch_alias="arm64";;
 esac
 
 # download
-echo "downloading... https://github.com/derailed/k9s/releases/download/v${version}/k9s_${os_alias}_${arch_alias}.tar.gz"
 curl -fL "https://github.com/derailed/k9s/releases/download/v${version}/k9s_${os_alias}_${arch_alias}.tar.gz" -o "${TEMP_DIR}/k9s.tar.gz"
 curl -fL "https://github.com/derailed/k9s/releases/download/v${version}/checksums.txt" -o "${TEMP_DIR}/k9s.tar.gz.sha256"
 

@@ -2,8 +2,6 @@
 
 set -e
 
-echo "DEPRECATED: moved to tenable/terrascan"
-
 # vars
 os="${os:-${1}}"
 arch="${arch:-${2}}"
@@ -24,8 +22,8 @@ else
 fi
 
 # download
-curl -fL "https://github.com/accurics/terrascan/releases/download/v${version}/terrascan_${version}_${os_alias}_${arch_alias}.tar.gz" -o "${TEMP_DIR}/terrascan.tar.gz"
-curl -fL "https://github.com/accurics/terrascan/releases/download/v${version}/checksums.txt" -o "${TEMP_DIR}/terrascan.tar.gz.sha256"
+curl -fL "https://github.com/tenable/terrascan/releases/download/v${version}/terrascan_${version}_${os_alias}_${arch_alias}.tar.gz" -o "${TEMP_DIR}/terrascan.tar.gz"
+curl -fL "https://github.com/tenable/terrascan/releases/download/v${version}/checksums.txt" -o "${TEMP_DIR}/terrascan.tar.gz.sha256"
 
 # validate
 echo "$(cat "${TEMP_DIR}/terrascan.tar.gz.sha256" | grep "terrascan_${version}_${os_alias}_${arch_alias}.tar.gz" | awk '{print $1;}')  ${TEMP_DIR}/terrascan.tar.gz" | shasum -a 256 --check --quiet

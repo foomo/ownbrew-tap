@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # vars
 os="${os:-${1}}"
 arch="${arch:-${2}}"

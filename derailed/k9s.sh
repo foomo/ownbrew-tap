@@ -2,8 +2,6 @@
 
 set -e
 
-source ../include/semver.sh
-
 # vars
 os="${os:-${1}}"
 arch="${arch:-${2}}"
@@ -12,18 +10,6 @@ version="${version:-${3}}"
 case $os in
 linux) os_alias="Linux";;
 darwin) os_alias="Darwin";;
-esac
-
-case $arch in
-amd64)
-  if semver_compare "${version}" "0.27.0"
-  then
-    arch_alias="x86_64"
-  else
-    arch_alias="amd64"
-  fi
-  ;;
-arm64) arch_alias="arm64";;
 esac
 
 echo "download ...

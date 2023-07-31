@@ -15,9 +15,9 @@ echo "validate ... "
 echo "$(cat "${TEMP_DIR}/zeus.tar.gz.sha256" | grep "zeus_${version}_${os}_${arch}.tar.gz" | awk '{print $1;}')  ${TEMP_DIR}/zeus.tar.gz" | shasum -a 256 --check --quiet
 
 echo "extract ... "
-tar -xzvf "${TEMP_DIR}/zeus.tar.gz" -C ./bin zeus
-mv bin/zeus "${BIN_DIR}/zeus-${version}-${os}-${arch}"
+tar -xzvf "${TEMP_DIR}/zeus.tar.gz" -C "${TEMP_DIR}" zeus
+mv "${TEMP_DIR}/zeus" "${BIN_DIR}/zeus-${version}-${os}-${arch}"
 chmod a+x "${BIN_DIR}/zeus-${version}-${os}-${arch}"
 
 echo "cleanup ... "
-rm "${TEMP_DIR}/zeus.tar.gz" "${TEMP_DIR}/zeus.tar.gz.sha256"
+rm -f "${TEMP_DIR}/zeus.tar.gz" "${TEMP_DIR}/zeus.tar.gz.sha256"

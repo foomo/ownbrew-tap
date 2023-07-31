@@ -12,7 +12,7 @@ linux) os_alias="Linux";;
 darwin) os_alias="Darwin";;
 esac
 
-echo "download ...
+echo "download ..."
 curl -fL "https://github.com/derailed/k9s/releases/download/v${version}/k9s_${os_alias}_${arch_alias}.tar.gz" -o "${TEMP_DIR}/k9s.tar.gz"
 curl -fL "https://github.com/derailed/k9s/releases/download/v${version}/checksums.txt" -o "${TEMP_DIR}/k9s.tar.gz.sha256"
 

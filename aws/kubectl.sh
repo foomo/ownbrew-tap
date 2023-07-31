@@ -4,7 +4,7 @@
 
 set -e
 
-echo "DEPRECATED: use kubernetes/"
+echo "DEPRECATED: use kubernetes/kubectl"
 
 # vars
 os="${os:-${1}}"

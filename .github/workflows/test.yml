@@ -27,46 +27,15 @@ jobs:
         arch:
           - amd64
           - arm64
-        tab:
-          - { name: tenable/terrascan.sh, version: "1.18.2" }
-          - { name: c-bata/kube-prompt.sh, version: "1.0.11" }
-          - { name: deepmap/oapi-codegen.sh, version: "1.12.4" }
-          - { name: derailed/k9s.sh, version: "0.27.4" }
-          - { name: dreadl0ck/zeus.sh, version: "0.9.12" }
-          - { name: foomo/gocontentful.sh, version: "1.0.18" }
-          - { name: foomo/gograpple.sh, version: "0.0.21" }
-          - { name: foomo/gotsrpc.sh, version: "2.7.0" }
-          - { name: foomo/logfrog.sh, version: "0.2.5" }
-          - { name: foomo/squadron.sh, version: "1.9.0" }
-          - { name: go-courier/husky.sh, version: "1.8.1" }
-          - { name: golang/mockgen.sh, version: "1.6.0" }
-          - { name: golangci/golangci-lint.sh, version: "1.53.2" }
-          - { name: grafana/k6.sh, version: "0.44.1" }
-          - { name: gravitational/teleport.sh, version: "13.1.0" }
-          - { name: grpc/protoc-gen-go-grpc.sh, version: "1.1.0" }
-          - { name: gruntwork-io/terragrunt.sh, version: "0.46.3" }
-          - { name: hashicorp/terraform.sh, version: "1.4.6" }
-          - { name: helm/helm.sh, version: "3.12.0" }
-          - { name: jondot/hygen.sh, version: "6.2.11" }
-          - { name: k3d-io/k3d.sh, version: "5.5.1" }
-          - { name: kubernetes-sigs/kubectl-hns.sh, version: "1.1.0" }
-          - { name: kubernetes/kubectl.sh, version: "1.27.4" }
-          - { name: loft-sh/vcluster.sh, version: "0.15.2" }
-          - { name: mfridman/tparse.sh, version: "0.11.1" }
-          - { name: mongodb/mongo.sh, version: "5.0.5" }
-          - { name: mongodb/mongosh.sh, version: "1.10.3" }
-          - { name: mongodb/mongotools.sh, version: "100.7.4" }
-          - { name: protocolbuffers/protoc-gen-go.sh, version: "1.27.1" }
-          - { name: protocolbuffers/protoc.sh, version: "3.19.1" }
-          - { name: psampaz/go-mod-outdated.sh, version: "0.9.0" }
-          - { name: stern/stern.sh, version: "1.25.0" }
-          - { name: terraform-linters/tflint.sh, version: "0.46.1" }
     runs-on: ${{ matrix.os.name }}
     steps:
       - uses: actions/checkout@v3
       - name: Install
+        env:
+          OS: ${{ matrix.os.short }}
+          ARCH: ${{ matrix.arch }}
         run: |
           mkdir -p $BIN_DIR
           mkdir -p $TEMP_DIR
-          ./${{ matrix.tab.name }} ${{ matrix.os.short }} ${{ matrix.arch }} ${{ matrix.tab.version }}
+          make test
 

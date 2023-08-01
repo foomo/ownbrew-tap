@@ -10,7 +10,7 @@ ownbrew:
       version: 1.10.3
 ```
 
-## Database Tools ([releases](https://github.com/mongodb/mongo-tools/tags))
+## Database Tools ([releases](https://www.mongodb.com/download-center/database-tools/releases/archive))
 
 ```yaml
 ownbrew:

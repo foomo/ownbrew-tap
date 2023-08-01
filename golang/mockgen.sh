@@ -2,6 +2,8 @@
 
 set -e
 
+echo "DEPRECATED: use uber-go/mock"
+
 # vars
 os="${os:-${1}}"
 arch="${arch:-${2}}"

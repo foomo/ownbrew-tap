@@ -30,7 +30,7 @@ jobs:
     runs-on: ${{ matrix.os.name }}
     steps:
       - uses: actions/checkout@v3
-      - name: Install
+      - name: Run tests
         env:
           OS: ${{ matrix.os.short }}
           ARCH: ${{ matrix.arch }}
@@ -38,4 +38,10 @@ jobs:
           mkdir -p $BIN_DIR
           mkdir -p $TEMP_DIR
           make test
+      - name: List files
+        run: |
+          echo "--- $BIN_DIR -------------"
+          ls -loah $BIN_DIR
+          echo "--- $TEMP_DIR ------------"
+          ls -loah $TEMP_DIR
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
@@ -13,5 +13,5 @@ export TEMP_DIR=${TEMP_DIR:='./tmp/tmp'}
 function test() {
   local script=$1
   local version=$2
-  echo -e "${CY}TEST: $script $os $arch $version${NC}" && $script $os $arch $version && echo -e "${CG}SUCCESS${NC}" || echo -e "${CR}FAILURE${NC}"
+  echo -e "${CYellow}TEST: $script $os $arch $version${NC}" && $script $os $arch $version && echo -e "${CGreen}TEST: OK${NC}" || echo -e "${CRed}TEST: FAIL${NC}"
 }

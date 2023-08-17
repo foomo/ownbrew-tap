@@ -1,14 +1,16 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
+
+source .include/log.sh
 
 # vars
 os="${os:-${1}}"
 arch="${arch:-${2}}"
 version="${version:-${3}}"
 
-# download
+info "downloading ..."
 curl -fL "https://github.com/gruntwork-io/terragrunt/releases/download/v${version}/terragrunt_${os}_${arch}" -o "${BIN_DIR}/terragrunt-${version}-${os}-${arch}"
 
-# extract
+info "extracting ..."
 chmod +x "${BIN_DIR}/terragrunt-${version}-${os}-${arch}"

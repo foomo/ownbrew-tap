@@ -1,6 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
+
+source .include/log.sh
 
 # vars
 os="${os:-${1}}"
@@ -27,18 +29,18 @@ esac
 # TODO remove once supported
 if [ "$os" = "darwin" ] && [ "$arch" = "arm64" ]
 then
-	echo "WARN: using amd64 version"
+	warn "WARN: using amd64 version"
 	arch_alias="x86_64"
 fi
 
-echo "download https://fastdl.mongodb.org/${path}-${os_alias}-${arch_alias}-${version}.tgz ..."
+info "downloading ..."
 curl -fL "https://fastdl.mongodb.org/${path}-${os_alias}-${arch_alias}-${version}.tgz" -o "${TEMP_DIR}/mongo.tgz"
 
-echo "extract ..."
+info "extracting ..."
 mkdir "${TEMP_DIR}/mongo"
 tar -xzvf "${TEMP_DIR}/mongo.tgz" --strip-components=1 -C "${TEMP_DIR}/mongo"
-mv "${TEMP_DIR}/mongo/bin/mongo" "${BIN_DIR}/mongo-${version}-${os}-${arch}"
+mv -f "${TEMP_DIR}/mongo/bin/mongo" "${BIN_DIR}/mongo-${version}-${os}-${arch}"
 chmod a+x "${BIN_DIR}/mongo-${version}-${os}-${arch}"
 
-echo "cleanup ..."
+info "cleanup ..."
 rm "${TEMP_DIR}/mongo.tgz" && rm -rf "${TEMP_DIR}/mongo"

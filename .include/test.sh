@@ -2,7 +2,11 @@
 
 set -e
 
-source .include/colors.sh
+CRed='\033[1;31m'
+CGray='\033[0;37m'
+CGreen='\033[1;32m'
+CYellow='\033[1;33m'
+NC='\033[0m'
 
 os=${OS:=$(uname -s | tr '[:upper:]' '[:lower:]')}
 arch=${ARCH:=$(arch)}

@@ -1,6 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
+
+source .include/log.sh
 
 # vars
 os="${os:-${1}}"
@@ -17,11 +19,11 @@ linux) format="tgz";;
 darwin) format="zip";;
 esac
 
-# download
+info "downloading ..."
 curl -fL "https://downloads.mongodb.com/compass/mongosh-${version}-${os}-${arch_alias}.${format}" -o "${TEMP_DIR}/mongosh.${format}"
 
 
-# extract
+info "extracting ..."
 case $format in
 tgz)
   mkdir "${TEMP_DIR}/mongosh"
@@ -29,12 +31,12 @@ tgz)
   ;;
 zip)
   unzip "${TEMP_DIR}/mongosh.zip" -d "${TEMP_DIR}"
-  mv "${TEMP_DIR}/mongosh-${version}-${os}-${arch_alias}" "${TEMP_DIR}/mongosh"
+  mv -f "${TEMP_DIR}/mongosh-${version}-${os}-${arch_alias}" "${TEMP_DIR}/mongosh"
   ;;
 esac
 
-mv "${TEMP_DIR}/mongosh/bin/mongosh" "${BIN_DIR}/mongosh-${version}-${os}-${arch}"
+mv -f "${TEMP_DIR}/mongosh/bin/mongosh" "${BIN_DIR}/mongosh-${version}-${os}-${arch}"
 chmod a+x "${BIN_DIR}/mongosh-${version}-${os}-${arch}"
 
-# cleanup
+info "cleanup ..."
 rm "${TEMP_DIR}/mongosh.${format}" && rm -rf "${TEMP_DIR}/mongosh"

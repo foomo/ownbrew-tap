@@ -1,6 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
+
+source .include/log.sh
 
 # vars
 os="${os:-${1}}"
@@ -12,16 +14,16 @@ amd64) arch_alias="x86_64";;
 arm64) arch_alias="arm64";;
 esac
 
-# download
+info "downloading ..."
 curl -fL "https://github.com/mfridman/tparse/releases/download/v${version}/tparse_${os}_${arch_alias}" -o "${TEMP_DIR}/tparse"
 curl -fL "https://github.com/mfridman/tparse/releases/download/v${version}/checksums.txt" -o "${TEMP_DIR}/tparse.sha256"
 
-# validate
+info "validating ..."
 echo "$(cat ${TEMP_DIR}/tparse.sha256 | grep "tparse_${os}_${arch_alias}" | awk '{print $1;}')  ${TEMP_DIR}/tparse" | shasum -a 256 --check --quiet
 
-# extract
-mv "${TEMP_DIR}/tparse" "${BIN_DIR}/tparse-${version}-${os}-${arch}"
+info "extracting ..."
+mv -f "${TEMP_DIR}/tparse" "${BIN_DIR}/tparse-${version}-${os}-${arch}"
 chmod a+x "${BIN_DIR}/tparse-${version}-${os}-${arch}"
 
-# cleanup
+info "cleanup ..."
 rm "${TEMP_DIR}/tparse.sha256"

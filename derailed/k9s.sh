@@ -40,7 +40,6 @@ info "downloading ..."
 curl -fL "https://github.com/derailed/k9s/releases/download/v${version}/k9s_${os_alias}_${arch}.tar.gz" -o "${TEMP_DIR}/k9s.tar.gz"
 ## changed name since v0.28.0
 if [ $(curl -LI "https://github.com/derailed/k9s/releases/download/v${version}/checksums.txt" -o /dev/null -w '%{http_code}\n' -s) == "200" ]; then
-  echo "old"
   curl -L "https://github.com/derailed/k9s/releases/download/v${version}/checksums.txt" -o "${TEMP_DIR}/k9s.tar.gz.sha256"
 else
   curl -L "https://github.com/derailed/k9s/releases/download/v${version}/checksums.sha256" -o "${TEMP_DIR}/k9s.tar.gz.sha256"

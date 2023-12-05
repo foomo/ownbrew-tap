@@ -5,7 +5,7 @@
 ```yaml
 ownbrew:
   packages:
-    - name: k9s
+    - name: mkcert
       tap: foomo/tap/filosottile/mkcert
       version: 1.4.4
 ```

@@ -46,7 +46,7 @@ else
 fi
 
 info "validating ..."
-echo "$(cat ${TEMP_DIR}/k9s.tar.gz.sha256 | grep "k9s_${os_alias}_${arch}.tar.gz" | awk '{print $1;}')  ${TEMP_DIR}/k9s.tar.gz" | shasum -a 256 --check --quiet
+echo "$(cat ${TEMP_DIR}/k9s.tar.gz.sha256 | grep "k9s_${os_alias}_${arch}.tar.gz$" | awk '{print $1;}')  ${TEMP_DIR}/k9s.tar.gz" | shasum -a 256 --check --quiet
 
 info "extracting ..."
 tar -xzvf "${TEMP_DIR}/k9s.tar.gz" -C "${TEMP_DIR}" k9s

@@ -52,4 +52,4 @@ do
 done
 
 info "cleanup ..."
-rm "${TEMP_DIR}/pulumi.tar.gz" "${TEMP_DIR}/pulumi.tar.gz.sha256"
+rm -rf "${TEMP_DIR}/pulumi.tar.gz" "${TEMP_DIR}/pulumi.tar.gz.sha256" "${TEMP_DIR}/pulumi"

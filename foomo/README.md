@@ -49,3 +49,13 @@ ownbrew:
       tap: foomo/tap/foomo/squadron
       version: 0.2.5
 ```
+
+## Sesamy ([releases](https://github.com/foomo/sesamy-cli/releases))
+
+```yaml
+ownbrew:
+  packages:
+    - name: sesamy
+      tap: foomo/tap/foomo/sesamy
+      version: 0.1.0
+```

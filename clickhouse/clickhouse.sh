@@ -27,15 +27,23 @@ success() {
 }
 
 # vars
-os="${os:-${1}}"
+# os="${os:-${1}}"
 arch="${arch:-${2}}"
+version="${version:-${3}}"
+
+case $arch in
+amd64) arch_alias="";;
+arm64) arch_alias="aarch64";;
+esac
+
+# https://github.com/ClickHouse/ClickHouse/releases/download/v24.4.1.2088-stable/clickhouse-macos
+# https://github.com/ClickHouse/ClickHouse/releases/download/v24.4.1.2088-stable/clickhouse-macos-aarch64
+
+url="https://github.com/ClickHouse/ClickHouse/releases/download/${version}/clickhouse-macos-${arch_alias}"
+
 
 info "downloading ..."
-curl -fL "curl https://clickhouse.com/" -o "${TEMP_DIR}/install.sh"
+echo $url
+curl -fL "https://github.com/ClickHouse/ClickHouse/releases/download/${version}/clickhouse-macos-${arch_alias}" -o "${BIN_DIR}/clickhouse-macos-${version}-${arch}" --create-dirs
 
-
-info "installing ..."
-sh "${TEMP_DIR}/install.sh"
-
-info "cleanup ..."
-rm "${TEMP_DIR}/install.sh"
+chmod a+x "${BIN_DIR}/clickhouse-macos"

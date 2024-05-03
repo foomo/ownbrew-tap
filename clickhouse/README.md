@@ -7,5 +7,5 @@ ownbrew:
   packages:
     - name: clickhouse
       tap: foomo/tap/clickhouse/clickhouse
-      version: latest
+      version: v24.4.1.2088-stable
 ```

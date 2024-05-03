@@ -27,12 +27,17 @@ success() {
 }
 
 # vars
-# os="${os:-${1}}"
+os="${os:-${1}}"
 arch="${arch:-${2}}"
 version="${version:-${3}}"
 
+case $os in
+linux)  warn "Currently there is no linux version available"
+        exit 0;;
+esac
+
 case $arch in
-amd64) arch_alias="";;
+amd64) arch_alias="amd64";;
 arm64) arch_alias="aarch64";;
 esac
 
@@ -41,9 +46,7 @@ esac
 
 url="https://github.com/ClickHouse/ClickHouse/releases/download/${version}/clickhouse-macos-${arch_alias}"
 
-
 info "downloading ..."
-echo $url
 curl -fL "https://github.com/ClickHouse/ClickHouse/releases/download/${version}/clickhouse-macos-${arch_alias}" -o "${BIN_DIR}/clickhouse-macos-${version}-${arch}" --create-dirs
 
-chmod a+x "${BIN_DIR}/clickhouse-macos"
+chmod a+x "${BIN_DIR}/clickhouse-macos-${version}-${arch}"

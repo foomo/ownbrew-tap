@@ -34,6 +34,7 @@ version="${version:-${3}}"
 case $os in
 linux)  warn "Currently there is no linux version available"
         exit 0;;
+darwin) os_alias="macos";;
 esac
 
 case $arch in
@@ -44,9 +45,7 @@ esac
 # https://github.com/ClickHouse/ClickHouse/releases/download/v24.4.1.2088-stable/clickhouse-macos
 # https://github.com/ClickHouse/ClickHouse/releases/download/v24.4.1.2088-stable/clickhouse-macos-aarch64
 
-url="https://github.com/ClickHouse/ClickHouse/releases/download/${version}/clickhouse-macos-${arch_alias}"
-
 info "downloading ..."
-curl -fL "https://github.com/ClickHouse/ClickHouse/releases/download/${version}/clickhouse-macos-${arch_alias}" -o "${BIN_DIR}/clickhouse-macos-${version}-${arch}" --create-dirs
+curl -fL "https://github.com/ClickHouse/ClickHouse/releases/download/${version}/clickhouse-${os_alias}-${arch_alias}" -o "${BIN_DIR}/clickhouse-${os_alias}-${version}-${arch}" --create-dirs
 
-chmod a+x "${BIN_DIR}/clickhouse-macos-${version}-${arch}"
+chmod a+x "${BIN_DIR}/clickhouse-${os_alias}-${version}-${arch}"

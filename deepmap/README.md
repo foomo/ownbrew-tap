@@ -1,6 +1,8 @@
 # Deepmap
 
-## OApi Codegen ([releases](https://github.com/deepmap/oapi-codegen/releases))
+## oapi-codegen ([releases](https://github.com/deepmap/oapi-codegen/releases))
+
+> Binaries are currently downloaded from franklinkim/oapi-codegen till this [PR](https://github.com/oapi-codegen/oapi-codegen/pull/937) has been merged.
 
 ```yaml
 ownbrew:

@@ -1,13 +1,11 @@
-# OApi codegen
+# MinIO
 
-> Binaries are currently downloaded from franklinkim/oapi-codegen till this [PR](https://github.com/oapi-codegen/oapi-codegen/pull/937) has been merged.
-
-## oapi-codegen ([releases](https://github.com/oapi-codegen/oapi-codegen/releases))
+## mc ([releases](https://github.com/minio/minio/releases))
 
 ```yaml
 ownbrew:
   packages:
-    - name: oapi-codegen
-      tap: foomo/tap/oapi-codegen/oapi-codegen
-      version: 2.3.0
+    - name: mc
+      tap: foomo/tap/minio/mc
+      version: 2024-07-10T18-41-49Z
 ```

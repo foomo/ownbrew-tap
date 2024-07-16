@@ -35,8 +35,9 @@ info "downloading ..."
 curl -fL "https://releases.hashicorp.com/terraform/${version}/terraform_${version}_${os}_${arch}.zip" -o "${TEMP_DIR}/terraform.zip"
 
 info "extracting ..."
-unzip -p "${TEMP_DIR}/terraform.zip" > "${BIN_DIR}/terraform-${version}-${os}-${arch}"
+unzip "${TEMP_DIR}/terraform.zip" -d "${TEMP_DIR}/terraform"
+mv "${TEMP_DIR}/terraform/terraform" "${BIN_DIR}/terraform-${version}-${os}-${arch}"
 chmod a+x "${BIN_DIR}/terraform-${version}-${os}-${arch}"
 
 info "cleanup ..."
-rm "${TEMP_DIR}/terraform.zip"
+rm -rf "${TEMP_DIR}/terraform" "${TEMP_DIR}/terraform.zip"

@@ -2,4 +2,4 @@
 
 source .include/test.sh
 
-test "$(dirname $0)/terraform.sh" "1.4.6"
+test "$(dirname $0)/terraform.sh" "1.9.2"

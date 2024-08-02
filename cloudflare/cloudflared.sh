@@ -41,12 +41,20 @@ else
 fi
 
 info "downloading ..."
-curl -fL "https://github.com/cloudflare/cloudflared/releases/download/${version}/cloudflared-${os}-${arch_alias}.tgz" -o "${TEMP_DIR}/cloudflared.tar.gz"
+if [ "$os" = "darwin" ]
+then
+  curl -fL "https://github.com/cloudflare/cloudflared/releases/download/${version}/cloudflared-${os}-${arch_alias}.tgz" -o "${TEMP_DIR}/cloudflared.tar.gz"
+else
+  curl -fL "https://github.com/cloudflare/cloudflared/releases/download/${version}/cloudflared-${os}-${arch_alias}" -o "${TEMP_DIR}/cloudflared"
+fi
 
 info "extracting ..."
-tar -xzvf "${TEMP_DIR}/cloudflared.tar.gz" -C "${TEMP_DIR}" cloudflared
+if [ "$os" = "darwin" ]
+then
+  tar -xzvf "${TEMP_DIR}/cloudflared.tar.gz" -C "${TEMP_DIR}" cloudflared
+fi
 mv -f "${TEMP_DIR}/cloudflared" "${BIN_DIR}/cloudflared-${version}-${os}-${arch}"
 chmod a+x "${BIN_DIR}/cloudflared-${version}-${os}-${arch}"
 
 info "cleanup ..."
-rm "${TEMP_DIR}/cloudflared.tar.gz"
+rm -f "${TEMP_DIR}/cloudflared.tar.gz"

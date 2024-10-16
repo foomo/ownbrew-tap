@@ -42,7 +42,6 @@ arm64) arch_alias="arm64";;
 esac
 
 info "downloading ..."
-# TODO switch to deepmap once releases are made
 curl -fL "https://github.com/dadav/helm-schema/releases/download/${version}/helm-schema_${version}_${os_alias}_${arch_alias}.tar.gz" -o "${TEMP_DIR}/helm-schema.tar.gz"
 curl -fL "https://github.com/dadav/helm-schema/releases/download/${version}/checksums.txt" -o "${TEMP_DIR}/helm-schema.tar.gz.sha256"
 

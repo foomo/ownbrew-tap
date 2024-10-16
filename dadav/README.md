@@ -5,7 +5,7 @@
 ```yaml
 ownbrew:
   packages:
-    - name: oapi-codegen
+    - name: helm-schema
       tap: foomo/tap/dadav/helm-schema
       version: 0.14.1
 ```

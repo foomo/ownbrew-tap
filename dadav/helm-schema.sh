@@ -36,13 +36,18 @@ linux) os_alias="Linux";;
 darwin) os_alias="Darwin";;
 esac
 
+case $arch in
+amd64) arch_alias="x86_64";;
+arm64) arch_alias="arm64";;
+esac
+
 info "downloading ..."
 # TODO switch to deepmap once releases are made
-curl -fL "https://github.com/dadav/helm-schema/releases/download/${version}/helm-schema_${version}_${os_alias}_${arch}.tar.gz" -o "${TEMP_DIR}/helm-schema.tar.gz"
+curl -fL "https://github.com/dadav/helm-schema/releases/download/${version}/helm-schema_${version}_${os_alias}_${arch_alias}.tar.gz" -o "${TEMP_DIR}/helm-schema.tar.gz"
 curl -fL "https://github.com/dadav/helm-schema/releases/download/${version}/checksums.txt" -o "${TEMP_DIR}/helm-schema.tar.gz.sha256"
 
 info "validating ..."
-echo "$(cat "${TEMP_DIR}/helm-schema.tar.gz.sha256" | grep "helm-schema_${version}_${os_alias}_${arch}.tar.gz" | awk '{print $1;}')  ${TEMP_DIR}/helm-schema.tar.gz" | shasum -a 256 --check --quiet
+echo "$(cat "${TEMP_DIR}/helm-schema.tar.gz.sha256" | grep "helm-schema_${version}_${os_alias}_${arch_alias}.tar.gz" | awk '{print $1;}')  ${TEMP_DIR}/helm-schema.tar.gz" | shasum -a 256 --check --quiet
 
 info "extracting ..."
 tar -xzvf "${TEMP_DIR}/helm-schema.tar.gz" -C "${TEMP_DIR}" helm-schema

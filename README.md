@@ -1,4 +1,10 @@
+<p align="center">
+  <img alt="ownbrew" src=".github/assets/ownbrew.png"/>
+</p>
+
 # Ownbrew Taps
+
+> Your local project package manager
 
 ## Usage
 
@@ -108,3 +114,13 @@ ownbrew:
       tap: foomo/tap/dreadl0ck/zeus
       version: 0.9.11
 ````
+
+## How to Contribute
+
+Make a pull request...
+
+## License
+
+Distributed under MIT License, please see license file within the code for more details.
+
+_Made with ♥ [foomo](https://www.foomo.org) by [bestbytes](https://www.bestbytes.com)_

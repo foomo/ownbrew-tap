@@ -44,4 +44,4 @@ mv -f "${TEMP_DIR}/kustomize" "${BIN_DIR}/kustomize-${version}-${os}-${arch}"
 chmod a+x "${BIN_DIR}/kustomize-${version}-${os}-${arch}"
 
 info "cleanup ..."
-rm "${TEMP_DIR}/kustomize.tar.gz"
+rm "${TEMP_DIR}/kustomize.sha256" "${TEMP_DIR}/kustomize.tar.gz"

@@ -31,21 +31,12 @@ os="${os:-${1}}"
 arch="${arch:-${2}}"
 version="${version:-${3}}"
 
-# TODO remove once supported
-if [ "$arch" = "arm64" ]
-then
-	warn "WARN: using amd64 version"
-	arch_alias="amd64"
-else
-	arch_alias="${arch}"
-fi
-
 info "downloading ..."
 if [ "$os" = "darwin" ]
 then
-  curl -fL "https://github.com/cloudflare/cloudflared/releases/download/${version}/cloudflared-${os}-${arch_alias}.tgz" -o "${TEMP_DIR}/cloudflared.tar.gz"
+  curl -fL "https://github.com/cloudflare/cloudflared/releases/download/${version}/cloudflared-${os}-${arch}.tgz" -o "${TEMP_DIR}/cloudflared.tar.gz"
 else
-  curl -fL "https://github.com/cloudflare/cloudflared/releases/download/${version}/cloudflared-${os}-${arch_alias}" -o "${TEMP_DIR}/cloudflared"
+  curl -fL "https://github.com/cloudflare/cloudflared/releases/download/${version}/cloudflared-${os}-${arch}" -o "${TEMP_DIR}/cloudflared"
 fi
 
 info "extracting ..."

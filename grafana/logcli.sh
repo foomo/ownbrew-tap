@@ -39,8 +39,8 @@ info "validating ..."
 echo "$(cat "${TEMP_DIR}/logcli.zip.sha256" | grep "logcli-${os}-${arch}.zip" | awk '{print $1;}')  ${TEMP_DIR}/logcli.zip" | shasum -a 256 --check --quiet
 
 info "extracting ..."
-unzip -p "${TEMP_DIR}/logcli.zip" "logcli-${os}-${arch}" > "${BIN_DIR}/logcli-v${version}-${os}-${arch}"
-chmod a+x "${BIN_DIR}/logcli-v${version}-${os}-${arch}"
+unzip -p "${TEMP_DIR}/logcli.zip" "logcli-${os}-${arch}" > "${BIN_DIR}/logcli-${version}-${os}-${arch}"
+chmod a+x "${BIN_DIR}/logcli-${version}-${os}-${arch}"
 
 info "cleanup ..."
 rm "${TEMP_DIR}/logcli.zip" "${TEMP_DIR}/logcli.zip.sha256"

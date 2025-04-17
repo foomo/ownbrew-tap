@@ -42,7 +42,7 @@ arm64) arch_alias="arm64" ;;
 esac
 
 info "downloading ..."
-curl -fL "https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v${version}/cloud-sql-proxy.${os_alias}.${arch_alias}" -o "${TEMP_DIR}/cloudsqlproxy"
+curl -fL "https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v${version}/cloud-sql-proxy.${os_alias}.${arch_alias}" -o "${BIN_DIR}/cloud-sql-proxy-${version}-${os}-${arch}"
 
-mv -f "${TEMP_DIR}/cloudsqlproxy" "${BIN_DIR}/cloudsqlproxy-${version}-${os}-${arch}"
-chmod a+x "${BIN_DIR}/cloudsqlproxy-${version}-${os}-${arch}"
+info "extracting ..."
+chmod a+x "${BIN_DIR}/cloud-sql-proxy-${version}-${os}-${arch}"

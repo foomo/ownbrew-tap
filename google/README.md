@@ -5,12 +5,12 @@
 ```yaml
 ownbrew:
   packages:
-    - name: yamlfmt
-      tap: foomo/tap/google/cloudsqlproxy
-      version: 2.15.0
+    - name: cloud-sql-proxy
+      tap: foomo/tap/google/cloud-sql-proxy
+      version: 2.15.2
 ```
 
-## Yamlftm ([releases](https://github.com/google/yamlfmt/releases))
+## Yamlfmt ([releases](https://github.com/google/yamlfmt/releases))
 
 ```yaml
 ownbrew:

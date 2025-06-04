@@ -6,6 +6,6 @@
 ownbrew:
   packages:
     - name: contentful-cli
-      tap: foomo/tap/foomo/contentful
-      version: 3.3.15
+      tap: foomo/tap/contentful/contentful-cli
+      version: 3.8.8
 ```

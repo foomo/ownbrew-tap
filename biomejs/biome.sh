@@ -37,7 +37,11 @@ arm64) arch_alias="arm64";;
 esac
 
 info "downloading ..."
-curl -fL "https://github.com/biomejs/biome/releases/download/cli%2Fv${version}/biome-${os}-${arch_alias}" -o "${BIN_DIR}/biome-${version}-${os}-${arch}"
+if [[ $version = 2* ]]; then
+  curl -fL "https://github.com/biomejs/biome/releases/download/%40biomejs%2Fbiome%40${version}/biome-${os}-${arch_alias}" -o "${BIN_DIR}/biome-${version}-${os}-${arch}"
+else
+  curl -fL "https://github.com/biomejs/biome/releases/download/cli%2Fv${version}/biome-${os}-${arch_alias}" -o "${BIN_DIR}/biome-${version}-${os}-${arch}"
+fi
 
 info "extracting ..."
 chmod a+x "${BIN_DIR}/biome-${version}-${os}-${arch}"

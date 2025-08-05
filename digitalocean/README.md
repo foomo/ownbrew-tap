@@ -1,6 +1,6 @@
 # DigitalOcean
 
-## doctl ([releases](hhttps://github.com/digitalocean/doctl/releases))
+## doctl ([releases](https://github.com/digitalocean/doctl/releases))
 
 ```yaml
 ownbrew:

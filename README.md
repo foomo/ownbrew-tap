@@ -1,8 +1,10 @@
+[![GitHub Stars](https://img.shields.io/github/stars/foomo/ownbrew-tap.svg?style=flat-square&logo=github)](https://github.com/foomo/ownbrew-tap)
+
 <p align="center">
-  <img alt="ownbrew" src=".github/assets/ownbrew.png"/>
+  <img alt="ownbrew-tap" src="docs/public/logo.png" height="400" width="400"/>
 </p>
 
-# Ownbrew Taps
+# Ownbrew Tap
 
 > Your local project package manager
 
@@ -117,10 +119,12 @@ ownbrew:
 
 ## How to Contribute
 
-Make a pull request...
+Contributions are welcome! Please read the [contributing guide](docs/CONTRIBUTING.md).
+
+![Contributors](https://contributors-table.vercel.app/image?repo=foomo/ownbrew-tap&width=50&columns=15)
 
 ## License
 
-Distributed under MIT License, please see license file within the code for more details.
+Distributed under MIT License, please see the [license](LICENSE) file for more details.
 
 _Made with ♥ [foomo](https://www.foomo.org) by [bestbytes](https://www.bestbytes.com)_

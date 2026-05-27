@@ -2,4 +2,4 @@
 
 source .include/test.sh
 
-test "$(dirname $0)/golangci-lint.sh" "1.53.3"
+test "$(dirname $0)/golangci-lint.sh" "2.12.2"
